@@ -1,0 +1,235 @@
+/* ==========================================
+   Layout & Container Constraints (86% Boundary)
+   ========================================== */
+.featured-section {
+  width: 100%;
+  padding: 5rem 0;
+  background-color: #f8fafc;
+}
+
+.featured-container {
+  width: 86%; /* Consistent 86% app layout boundary */
+  margin: 0 auto;
+}
+
+.featured-header {
+  margin-bottom: 3rem;
+}
+
+.featured-header h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+}
+
+.featured-header p {
+  font-size: 1.05rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* ==========================================
+   Flex Wrap Grid Implementation (4 Precise Columns)
+   ========================================== */
+.featured-flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 1.333%; /* 1.333% creates balanced left/right space across 4 items */
+}
+
+/* Individual Vehicle Item Card Structure */
+.vehicle-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px; /* Set precisely to 4px as requested */
+  overflow: hidden;
+  /* (100% / 4) minus gap margins = 24% width allocation */
+  width: 24%; 
+  box-sizing: border-box;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.vehicle-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* ==========================================
+   Card Visual Media Space & Left/Right Badges
+   ========================================== */
+.vehicle-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #f1f5f9;
+}
+
+.vehicle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vehicle-img-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Spreads badges horizontally across the image workspace */
+.vehicle-badge-container {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between; /* Anchor year left, stock right */
+  padding: 0 12px;
+  z-index: 2;
+}
+
+/* Year Badge: Anchored left with a distinct Blue background */
+.vehicle-badge-year {
+  background-color: #1e40af; /* Deep Royal Blue */
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px; /* Uniform 4px curve */
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* Stock Status Badge: Anchored right with a prominent Red background */
+.vehicle-badge-stock {
+  background-color: #dc2626; /* Prominent Red */
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px; /* Uniform 4px curve */
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+   Information Layout & Text Elements
+   ========================================== */
+.vehicle-details {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.vehicle-brand-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2563eb;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.vehicle-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.75rem 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Spec Tags Utility Layout */
+.vehicle-specs-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.spec-pill {
+  background-color: #f1f5f9;
+  color: #475569;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px; /* Tweaked to 4px for consistency */
+}
+
+.card-divider {
+  border: 0;
+  border-top: 1px solid #edf2f7;
+  margin: 0 0 1rem 0;
+}
+
+/* ==========================================
+   Bottom Metrics / Pricing Bar & Actions
+   ========================================== */
+.vehicle-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* Pushes to base of details card container */
+}
+
+.vehicle-price {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.vehicle-view-btn {
+  background-color: #1e293b;
+  color: #ffffff;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.5rem 0.9rem;
+  border-radius: 4px; /* Tweaked to 4px for consistent branding alignment */
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.vehicle-view-btn:hover {
+  background-color: #0f172a;
+}
+
+/* ==========================================
+   Responsive Media Viewport Targets
+   ========================================== */
+@media (max-width: 1200px) {
+  .vehicle-card {
+    width: 32%; /* Switch to a 3-column wrap */
+  }
+  .featured-flex-grid {
+    gap: 2rem 2%;
+  }
+}
+
+@media (max-width: 768px) {
+  .vehicle-card {
+    width: 49%; /* Switch to a 2-column wrap on tablets */
+  }
+  .featured-flex-grid {
+    gap: 1.5rem 2%;
+  }
+}
+
+@media (max-width: 480px) {
+  .vehicle-card {
+    width: 100%; /* Full screen width stacking for standard mobile views */
+  }
+  .featured-flex-grid {
+    gap: 1.5rem 0;
+  }
+}

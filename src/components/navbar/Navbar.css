@@ -1,0 +1,48 @@
+/* Outer wrapper spanning the full width of the screen */
+.navbar-wrapper {
+  width: 100%;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #ffffff;
+}
+
+/* Centered container constrained to exactly 86% width */
+.navbar-container {
+  width: 86%;
+  margin: 0 auto; /* Centers the 86% block on the screen */
+  display: flex;
+  justify-content: space-between; /* Pushes left and right columns apart */
+  align-items: center; /* Vertically aligns logo and links */
+  padding: 1rem 0;
+}
+
+/* Left Column Styling */
+.navbar-brand {
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+.navbar-brand h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Right Column Styling */
+.navbar-links {
+  display: flex;
+  gap: 1.5rem; /* Spaces the links out evenly */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar-links a:hover {
+  color: #000000; /* Subtle hover effect */
+}

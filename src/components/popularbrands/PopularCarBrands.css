@@ -1,0 +1,73 @@
+/* Layout & Container Constraints */
+.brands-section {
+  width: 100%;
+  padding: 4rem 0;
+  background-color: #ffffff;
+}
+
+.brands-container {
+  width: 86%; /* Your requested 86% width layout */
+  margin: 0 auto;
+}
+
+.brands-header {
+  margin-bottom: 2rem;
+}
+
+.brands-header h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 0.5rem 0;
+}
+
+.brands-header p {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Flexbox wrapper to lay pills out side-by-side and wrap cleanly */
+.brands-badge-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem; /* Row gap and Column gap spacing */
+}
+
+/* Pure CSS conversion of your favorite pill styles */
+.brand-pill-link {
+  display: inline-block;
+  background-color: #e5e7eb; /* Equivalent to bg-gray-200 */
+  color: #1f2937;            /* Equivalent to text-gray-800 */
+  font-size: 0.875rem;       /* Default text-sm size */
+  padding: 0.35rem 1rem;     /* Custom vertical & horizontal padding */
+  border-radius: 9999px;     /* Forces the pill shape */
+  text-decoration: none;     /* Removes standard link underline */
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+/* Hover and Keyboard Outline Focus configurations */
+.brand-pill-link:hover {
+  background-color: #d1d5db; /* Equivalent to hover:bg-gray-300 */
+}
+
+.brand-pill-link:focus-visible {
+  outline: 2px solid #111827;
+  outline-offset: 2px;
+}
+
+/* Internal styling for the count brackets */
+.brand-pill-count {
+  color: #6b7280;
+  font-weight: 600;
+  margin-left: 0.25rem;
+}
+
+/* Small adjustments to make text a tiny bit tighter on mobile views */
+@media (max-width: 600px) {
+  .brand-pill-link {
+    font-size: 0.75rem; /* Drops to text-xs equivalent */
+    padding: 0.25rem 0.75rem;
+  }
+}
